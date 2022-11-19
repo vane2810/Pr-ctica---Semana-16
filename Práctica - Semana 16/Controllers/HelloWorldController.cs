@@ -14,16 +14,18 @@ namespace Práctica___Semana_16.Controllers
             return View();
         }
 
-        public string Welcome()
+        public IActionResult Bienvenida(string name, int numTimes = 1)
         {
-            return "Esta es la acción de bienvenida";
+            ViewData["name"] = "Hola " + name;
+            ViewData["numTimes"] = numTimes;
+            return View();
         }
 
-        public string Parameters(string name, int edad)
+        public string Parameters(string name, int numTimes = 1)
         {
-            return HtmlEncoder.Default.Encode($"Hola {name}, tu edad es: {edad} años");
+            return HtmlEncoder.Default.Encode($"Hola {name}, su numero de intentos es: {numTimes}");
         }
-               
+
     }
 
 }
