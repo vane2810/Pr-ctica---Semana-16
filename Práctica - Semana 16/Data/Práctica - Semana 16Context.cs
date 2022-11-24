@@ -7,14 +7,13 @@ using System.Threading.Tasks;
 
 namespace Práctica___Semana_16.Data
 {
-    public class Práctica___Semana_16 
+    public class Práctica___Semana_16Context : DbContext
     {
-        public class Práctica__Semana_16Context : DbContext
+        public Práctica___Semana_16Context(DbContextOptions<Práctica___Semana_16Context> options) : base(options)
         {
-            public Práctica___Semana_16Context(DbContextOptions<Práctica___Semana_16Context> options) : base (options)
-            {
 
-            }
-        }
+        } 
+
+        public DbSet<Movie> Movie { get; set; }
     }
 }

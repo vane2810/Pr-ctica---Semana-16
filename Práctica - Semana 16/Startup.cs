@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Práctica___Semana_16.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,9 @@ namespace Práctica___Semana_16
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddDbContext<Práctica___Semana_16Context>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("Práctica___Semana_16Context")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
