@@ -27,8 +27,8 @@ namespace Práctica___Semana_16
         {
             services.AddControllersWithViews();
 
-            services.AddDbContext<Práctica___Semana_16Context>(options =>
-            options.UseSqlServer(Configuration.GetConnectionString("Práctica___Semana_16Context")));
+            _ = services.AddDbContext<Práctica___Semana_16Context>(options =>
+              options.UseSqlServer(Configuration.GetConnectionString("Práctica___Semana_16Context")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
